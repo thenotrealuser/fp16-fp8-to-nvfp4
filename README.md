@@ -1,3 +1,12 @@
+<img width="1099" height="789" alt="image" src="https://github.com/user-attachments/assets/63d14f04-7f88-4c80-99f1-140a28cdcaa8" />
+
+<img width="351" height="52" alt="image" src="https://github.com/user-attachments/assets/7262f67a-8d16-4307-bae7-9898f38b86b9" />
+
+<img width="351" height="51" alt="image" src="https://github.com/user-attachments/assets/5951cfed-2fe2-4334-9de9-f4d7299ec9e9" />
+
+
+
+
 Z-Image / HiDream NVFP4 Kitchen Converter
 
 GPU-friendly NVFP4 converter for modern diffusion models using mixed-precision strategies focused on real-world ComfyUI compatibility.
