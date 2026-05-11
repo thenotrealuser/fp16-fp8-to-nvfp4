@@ -1,0 +1,10 @@
+This package is an unofficial standalone helper.
+
+It uses the public approach of converting 2D weights with comfy-kitchen's TensorCoreNVFP4Layout and writing ComfyUI quantization metadata.
+
+Relevant upstream projects:
+- comfy-kitchen
+- tritant/ComfyUI_Kitchen_nvfp4_Converter, Apache-2.0
+- ComfyUI
+
+This package does not include model files.
