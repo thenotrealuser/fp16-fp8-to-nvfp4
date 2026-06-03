@@ -5,10 +5,6 @@
 <img width="351" height="51" alt="image" src="https://github.com/user-attachments/assets/5951cfed-2fe2-4334-9de9-f4d7299ec9e9" />
 
 
-
-UPDATE 0.1: NOW SUPPORTS: IDEOGRAM, Z-IMAGE, HIDREAM
-
-
 REQUIRES PYTHON 3.10.11
 
 
@@ -20,6 +16,7 @@ Supports:
 
 Z-Image Turbo
 HiDream-I1
+Ideogram 4 FP8
 FP16/BF16 source models
 Experimental FP8 → NVFP4 conversion
 
@@ -49,6 +46,7 @@ Model	Status
 Z-Image Turbo	Stable
 HiDream-I1	Stable
 HiDream-I1 FP8 source	Experimental
+Ideogram 4 FP8 source	Experimental
 Generic Diffusers	Experimental
 Why This Exists
 
@@ -96,11 +94,23 @@ Installation
 Example:
 
 C:\NVFP4_Converter\
-2. Install environment
+2. Install everything
 
 Run:
 
+install.bat
+
+This downloads a local Python 3.10.11 into:
+
+runtime\python\
+
+It does not require Python to be installed on Windows. It installs pip, tkinter/Tcl-Tk for the GUI, PyTorch cu130, and the converter dependencies into that local runtime.
+
+Advanced/manual alternatives:
+
 install_venv.bat
+install_deps_only.bat
+
 3. Launch GUI
 run_gui.bat
 GUI Workflow
@@ -121,6 +131,10 @@ Z-Image-Turbo
 Z-Image-Turbo-Conservative
 HiDream
 HiDream-I1-Auto
+Ideogram
+Ideogram-4-FP8
+Ideogram-4-FP8-Aggressive
+Ideogram-4-FP8-ScanOnly-Safe
 Step 4
 
 Run:
@@ -170,6 +184,28 @@ Recommended path:
 FP16 → NVFP4
 
 FP8 sources may still work but are considered experimental.
+
+Ideogram 4 Notes
+
+Ideogram 4 FP8 is a 34-layer single-stream DiT.
+
+Use:
+
+Ideogram-4-FP8
+
+as the default profile. It keeps conditioning, timestep/AdaLN, normalization, embedding, rotary/position, and final output tensors in BF16/FP16, while converting large attention/MLP 2D weights to NVFP4.
+
+Use:
+
+Ideogram-4-FP8-Aggressive
+
+only after a successful dry scan and test load. It also allows input and LLM conditioning projections to be quantized.
+
+Run:
+
+Ideogram-4-FP8-ScanOnly-Safe
+
+for inspection-only scans where accidental conversion should quantize nothing.
 
 Recommended ComfyUI Settings
 Loader

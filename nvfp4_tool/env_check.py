@@ -3,7 +3,7 @@ import platform
 import sys
 import subprocess
 
-print("=== Z-Image NVFP4 Kitchen env check ===", flush=True)
+print("=== NVFP4 Kitchen env check ===", flush=True)
 print("Python:", sys.version, flush=True)
 print("Executable:", sys.executable, flush=True)
 print("Platform:", platform.platform(), flush=True)

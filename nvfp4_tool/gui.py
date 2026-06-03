@@ -14,17 +14,15 @@ CLI = ROOT / "nvfp4_tool" / "convert_cli.py"
 ENV_CHECK = ROOT / "nvfp4_tool" / "env_check.py"
 
 MODEL_TYPES = [
+    "Ideogram-4-FP8",
+    "Ideogram-4-FP8-Aggressive",
+    "Ideogram-4-FP8-ScanOnly-Safe",
     "Z-Image-Turbo",
     "Z-Image-Turbo-Conservative",
-    "Z-Image-Base",
-    "Flux.1-dev",
-    "Flux.1-Fill",
-    "Flux.2-dev",
-    "Flux.2-Klein-9b",
-    "Qwen-Image-Edit-2511",
-    "Qwen-Image-2512",
-    "Wan2.2-i2v-high-low",
-    "LTX-2-19b-dev-or-distilled",
+    "HiDream-I1-Auto",
+    "HiDream-I1-Aggressive",
+    "HiDream-I1-Conservative",
+    "HiDream-I1-ScanOnly-Safe",
 ]
 
 class App(tk.Tk):
@@ -70,7 +68,7 @@ class App(tk.Tk):
         opts.pack(fill="x", **pad)
 
         ttk.Label(opts, text="Profile:").grid(row=0, column=0, sticky="w")
-        ttk.Combobox(opts, textvariable=self.model_type_var, values=MODEL_TYPES, state="readonly", width=28).grid(row=0, column=1, sticky="w")
+        ttk.Combobox(opts, textvariable=self.model_type_var, values=MODEL_TYPES, state="readonly", width=32).grid(row=0, column=1, sticky="w")
 
         ttk.Label(opts, text="Device:").grid(row=0, column=2, sticky="w")
         ttk.Combobox(opts, textvariable=self.device_var, values=["cuda", "cpu"], state="readonly", width=8).grid(row=0, column=3, sticky="w")
