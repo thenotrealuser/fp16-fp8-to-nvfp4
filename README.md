@@ -5,6 +5,10 @@
 <img width="351" height="51" alt="image" src="https://github.com/user-attachments/assets/5951cfed-2fe2-4334-9de9-f4d7299ec9e9" />
 
 
+
+UPDATE 0.1: NOW SUPPORTS: IDEOGRAM, Z-IMAGE, HIDREAM
+
+
 REQUIRES PYTHON 3.10.11
 
 
